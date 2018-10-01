@@ -43,10 +43,12 @@ unzip -o estc_processed.csv.zip
 # Load R, install modules
 module load r-env/3.5.1
 # Load R modules:
-# stringr,lubridate (tidyverse), stringi, plyr
+# stringr, lubridate (tidyverse), stringi, plyr
 cd ~/projects/csc-taito-batch-scripts/estc-publishers
 Rscript requirements.R
 
+# Run ESTC-Publishers script
+cd ~/projects/comhis/estc-publishers/r-scripts
 
 
 # This script will print some usage statistics to the
