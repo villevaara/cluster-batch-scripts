@@ -9,7 +9,6 @@ install_package_wrapper <- function(package_name,
   } else {
     print(paste0("Package ", package_name, " already installed."))
   }
-  # library(package_name, character.only=TRUE)
 }
 
 
@@ -18,4 +17,4 @@ cran_mirror <- "https://cloud.r-project.org"
 install_package_wrapper("stringi", cran_mirror)
 install_package_wrapper("stringr", cran_mirror)
 install_package_wrapper("tidyverse", cran_mirror)
-install_package_wrapper("plyr", cran_mirror)
+# install_package_wrapper("plyr", cran_mirror)
