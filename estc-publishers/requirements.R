@@ -4,9 +4,6 @@ install_package_wrapper <- function(package_name,
                                     force_reinstall = FALSE) {
   download_package <- (
     !require(package_name, character.only=TRUE) | force_reinstall)
-  print(paste0("req: ", require(package_name)))
-  print(paste0("for: ", force_reinstall))
-  print(paste0("dow: ", download_package))
   if (download_package) {
     install.packages(package_name, repos = cran_mirror)
   } else {
