@@ -49,7 +49,7 @@ Rscript requirements.R
 
 # Run ESTC-Publishers script
 cd ~/projects/comhis/estc-publishers/r-scripts
-
+Rscript main_wrapper.R
 
 # This script will print some usage statistics to the
 # end of file: std.out
