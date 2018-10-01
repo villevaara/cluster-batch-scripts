@@ -9,8 +9,8 @@
 #SBATCH -n 2
 #SBATCH -t 48:00:00
 #SBATCH --mem=4000
-#SBATCH --mail-type=END
-#SBATCH --mail-user=ville.vaara@helsinki.fi
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=villepvaara@gmail.com
 
 # commands to manage the batch script
 #   submission command
