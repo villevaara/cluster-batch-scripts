@@ -9,7 +9,7 @@ install_package_wrapper <- function(package_name,
   } else {
     print(paste0("Package ", package_name, " already installed."))
   }
-  library(package_name, character.only=TRUE)
+  # library(package_name, character.only=TRUE)
 }
 
 
