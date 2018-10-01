@@ -34,7 +34,7 @@
 cd ~/projects/comhis/estc-data-private
 git pull origin master
 cd ~/projects/comhis/estc-publishers
-git pull deploy master
+git pull origin master
 
 # Unzip data
 cd ~/projects/comhis/estc-data-private/estc-cleaned-initial
