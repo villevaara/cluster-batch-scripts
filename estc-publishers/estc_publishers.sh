@@ -8,7 +8,7 @@
 #SBATCH -p serial
 #SBATCH -n 2
 #SBATCH -t 48:00:00
-#SBATCH --mem=4000
+#SBATCH --mem=3000
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
 
@@ -30,26 +30,28 @@
 # run commands
 # ---------------------------------------------
 
-# Update repos
-cd ~/projects/comhis/estc-data-private
-git pull origin master
-cd ~/projects/comhis/estc-publishers
-git pull origin master
+# change over to $WORKDIR
+# Clone repos, or update them if they already exist.
+mkdir $WRKDIR/projects
+cd $WRKDIR/projects
+git clone git@github.com:COMHIS/estc-data-private.git || (cd $WRKDIR/projects/estc-data-private ; git pull origin master)
+cd $WRKDIR/projects
+git clone git@github.com:COMHIS/estc-publishers.git || (cd $WRKDIR/projects/estc-publishers ; git pull origin master)
 
 # Unzip data
-cd ~/projects/comhis/estc-data-private/estc-cleaned-initial
+cd $WRKDIR/projects/estc-data-private/estc-cleaned-initial
 unzip -o estc_processed.csv.zip
 
-# Load R, install modules
+# R setup
+# load Taito R module
 module load r-env/3.5.1
-# Load R modules:
-# stringr, lubridate (tidyverse), stringi, plyr
+# Load R libraries
 cd ~/projects/csc-taito-batch-scripts/estc-publishers
-Rscript requirements.R
+Rscript --vanilla requirements.R
 
 # Run ESTC-Publishers script
-cd ~/projects/comhis/estc-publishers/r-scripts
-Rscript main_wrapper.R
+cd $WRKDIR/projects/estc-publishers/r-scripts
+Rscript --vanilla main_wrapper.R -b "$WRKDIR/projects/"
 
 # This script will print some usage statistics to the
 # end of file: std.out

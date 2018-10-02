@@ -18,5 +18,4 @@ install_package_wrapper("stringi", cran_mirror)
 install_package_wrapper("stringr", cran_mirror)
 install_package_wrapper("tidyverse", cran_mirror)
 install_package_wrapper("pryr", cran_mirror)
-
-# install_package_wrapper("plyr", cran_mirror)
+install_package_wrapper("R.utils", cran_mirror)
