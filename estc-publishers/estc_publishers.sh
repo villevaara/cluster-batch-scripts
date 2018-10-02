@@ -30,6 +30,15 @@
 # run commands
 # ---------------------------------------------
 
+# R setup
+# load Taito modules
+# !! git needs to be loaded before the git commands below. Duh.
+module load r-env/3.5.1
+module load git
+# Load R libraries
+cd ~/projects/csc-taito-batch-scripts/estc-publishers
+Rscript --vanilla requirements.R
+
 # change over to $WORKDIR
 # Clone repos, or update them if they already exist.
 mkdir $WRKDIR/projects
@@ -41,13 +50,6 @@ git clone git@github.com:COMHIS/estc-publishers.git || (cd $WRKDIR/projects/estc
 # Unzip data
 cd $WRKDIR/projects/estc-data-private/estc-cleaned-initial
 unzip -o estc_processed.csv.zip
-
-# R setup
-# load Taito R module
-module load r-env/3.5.1
-# Load R libraries
-cd ~/projects/csc-taito-batch-scripts/estc-publishers
-Rscript --vanilla requirements.R
 
 # Run ESTC-Publishers script
 cd $WRKDIR/projects/estc-publishers/r-scripts
