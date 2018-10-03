@@ -46,6 +46,8 @@ cd $WRKDIR/projects
 git clone git@github.com:COMHIS/estc-data-private.git || (cd $WRKDIR/projects/estc-data-private ; git pull origin master)
 cd $WRKDIR/projects
 git clone git@github.com:COMHIS/estc-publishers.git || (cd $WRKDIR/projects/estc-publishers ; git pull origin master)
+cd $WRKDIR/projects
+git clone git@bitbucket.org:villevaara/data-private-estc-publishers-additional.git || (cd $WRKDIR/projects/data-private-estc-publishers-additional ; git pull origin master)
 
 # Unzip data
 cd $WRKDIR/projects/estc-data-private/estc-cleaned-initial
