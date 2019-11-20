@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=textReuseECCO
 #SBATCH --account=Project_2000230
-#SBATCH --partition=test
-#SBATCH --time=00:15:00
+#SBATCH --partition=small
+#SBATCH --time=05:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
