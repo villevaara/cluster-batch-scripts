@@ -6,7 +6,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=256G
+#SBATCH --mem-per-cpu=128G
 
 cd /scratch/project_2000230/txt_reuse/blast_ecco/
 module load python-data/3.7.3-1
