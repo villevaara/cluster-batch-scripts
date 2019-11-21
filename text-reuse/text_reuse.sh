@@ -14,6 +14,8 @@
 
 cd /scratch/project_2000230/txt_reuse/blast_ecco/
 module load python-data/3.7.3-1
+rm -r venv
+python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 cd /scratch/project_2000230/txt_reuse/blast_ecco/code/work
