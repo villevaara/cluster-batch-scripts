@@ -19,4 +19,5 @@ python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 cd /scratch/project_2000230/txt_reuse/blast_ecco/code/work
+export PATH="/scratch/project_2000230/txt_reuse/ncbi-blast-2.5.0+-src/c++/ReleaseMT/bin:$PATH"
 srun python data_preparer.py --data_location="/scratch/project_2000230/txt_reuse/chunks_test/" --output_folder="/scratch/project_2000230/txt_reuse/blast_work_test/" --language="ENG" --threads=1
