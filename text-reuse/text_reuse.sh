@@ -19,4 +19,4 @@ python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 cd /scratch/project_2000230/txt_reuse/blast_ecco/code/work
-srun python data_preparer.py --data_location= "/scratch/project_2000230/txt_reuse/chunks_for_blast/" --output_folder="/scratch/project_2000230/txt_reuse/blast_work/" --language="ENG" --threads=1
+srun python data_preparer.py --data_location="/scratch/project_2000230/txt_reuse/chunks_for_blast/" --output_folder="/scratch/project_2000230/txt_reuse/blast_work/" --language="ENG" --threads=1
