@@ -6,7 +6,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=256G
+#SBATCH --mem=26G
 #SBATCH --output=std.out
 #SBATCH --error=std.err
 #SBATCH --mail-type=ALL
