@@ -7,7 +7,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=20
 #SBATCH --mem=40G
-#SBATCH --gres=nvme:280GB
+#SBATCH --gres=nvme:280G
 #SBATCH --output=std_t1.out
 #SBATCH --error=std_t1.err
 #SBATCH --mail-type=ALL
