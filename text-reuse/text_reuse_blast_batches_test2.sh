@@ -7,8 +7,8 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
-#SBATCH --output=std.out
-#SBATCH --error=std.err
+#SBATCH --output=std_t2.out
+#SBATCH --error=std_t2.err
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
 
