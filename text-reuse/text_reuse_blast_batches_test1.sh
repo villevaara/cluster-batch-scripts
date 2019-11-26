@@ -7,6 +7,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=20
 #SBATCH --mem=40G
+#SBATCH --gres=nvme:280GB
 #SBATCH --output=std_t1.out
 #SBATCH --error=std_t1.err
 #SBATCH --mail-type=ALL
@@ -17,4 +18,7 @@ module load python-data/3.7.3-1
 pip install -r requirements.txt --user
 cd /scratch/project_2000230/txt_reuse/blast_ecco/code/work
 export PATH="/scratch/project_2000230/txt_reuse/ncbi-blast-2.5.0+-src/c++/ReleaseMT/bin:$PATH"
-srun python blast_batches.py  --output_folder="/scratch/project_2000230/txt_reuse/blast_work_full_testsets/set1" --batch_folder="/scratch/project_2000230/txt_reuse/blast_work_full_testsets/set1/data_out_e0_00000000001_qpi10_i0_threads20" --threads=20 --text_count=5203431 --qpi=10 --iter=0 --e_value=0.00000000001
+
+mv /scratch/project_2000230/txt_reuse/blast_work_full_testsets/set1 $LOCAL_SCRATCH/blast_work/set1
+srun python blast_batches.py  --output_folder="$LOCAL_SCRATCH/blast_work/set1" --batch_folder="$LOCAL_SCRATCH/blast_work/set1/data_out_e0_00000000001_qpi10_i0_threads20_local_scratch" --threads=20 --text_count=5203431 --qpi=10 --iter=0 --e_value=0.00000000001
+mv $LOCAL_SCRATCH/blast_work/set1 /scratch/project_2000230/txt_reuse/blast_work_full_testsets/set1
