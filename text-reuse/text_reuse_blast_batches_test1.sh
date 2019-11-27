@@ -19,6 +19,11 @@ pip install -r requirements.txt --user
 cd /scratch/project_2000230/txt_reuse/blast_ecco/code/work
 export PATH="/scratch/project_2000230/txt_reuse/ncbi-blast-2.5.0+-src/c++/ReleaseMT/bin:$PATH"
 
+echo "$(date)" " - Copying data to LOCAL_SCRATCH"
 scp -r /scratch/project_2000230/txt_reuse/blast_work $LOCAL_SCRATCH
+echo "$(date)" " - Copying done to LOCAL_SCRATCH"
 srun python blast_batches.py  --output_folder="$LOCAL_SCRATCH/blast_work" --batch_folder="$LOCAL_SCRATCH/blast_work/data_out_e0_00000000001_qpi10_i0_threads20_local_scratch" --threads=20 --text_count=5203431 --qpi=10 --iter=0 --e_value=0.00000000001
+echo "$(date)" " - Python script done. Copying results."
+mkdir /scratch/project_2000230/txt_reuse/blast_work_full_testsets_results/set1
 scp -r $LOCAL_SCRATCH/blast_work/data_out_e0_00000000001_qpi10_i0_threads20_local_scratch /scratch/project_2000230/txt_reuse/blast_work_full_testsets_results/set1
+echo "$(date)" " - Job finished."
