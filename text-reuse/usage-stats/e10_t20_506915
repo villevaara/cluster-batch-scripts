@@ -1,0 +1,17 @@
+Job ID: 506915
+Cluster: puhti
+User/Group: vvaara/vvaara
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 20
+CPU Utilized: 1-02:28:50
+CPU Efficiency: 82.21% of 1-08:12:40 core-walltime
+Job Wall-clock time: 01:36:38
+Memory Utilized: 938.28 MB
+Memory Efficiency: 2.29% of 40.00 GB
+Job consumed 41.36 CSC billing units based on following used resources
+CPU BU: 32.21
+Mem BU: 6.44
+NVME BU: 2.71
+
+e value: 0.00000000001
