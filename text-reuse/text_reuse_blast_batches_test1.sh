@@ -19,13 +19,13 @@ pip install -r requirements.txt --user
 cd /scratch/project_2000230/txt_reuse/blast_ecco/code/work
 export PATH="/scratch/project_2000230/txt_reuse/ncbi-blast-2.5.0+-src/c++/ReleaseMT/bin:$PATH"
 
-echo "$(date)" " - Copying data to LOCAL_SCRATCH"
+echo "SHELLSCRIPT - $(date) - Copying data to LOCAL_SCRATCH"
 scp -r /scratch/project_2000230/txt_reuse/blast_work $LOCAL_SCRATCH
-echo "$(date)" " - Copying done to LOCAL_SCRATCH"
+echo "SHELLSCRIPT - $(date) - Copying done to LOCAL_SCRATCH"
 srun python blast_batches.py  --output_folder="$LOCAL_SCRATCH/blast_work" --batch_folder="$LOCAL_SCRATCH/blast_work/data_out" --threads=20 --text_count=5203431 --qpi=10 --iter=0 --e_value=0.00000000001
-echo "blast conf: --threads=20 --text_count=5203431 --qpi=10 --iter=0 --e_value=0.00000000001"
-echo "$(date)" " - Python script done. Copying results."
+echo "BLAST CONF: --threads=20 --text_count=5203431 --qpi=10 --iter=0 --e_value=0.00000000001"
+echo "SHELLSCRIPT - $(date) - Python script done. Copying results."
 cd /scratch/project_2000230/txt_reuse/blast_work_full_testsets_results
 mkdir set1
 scp -r $LOCAL_SCRATCH/blast_work/data_out /scratch/project_2000230/txt_reuse/blast_work_full_testsets_results/set1
-echo "$(date)" " - Job finished."
+echo "SHELLSCRIPT - $(date) - Job finished."
