@@ -8,8 +8,8 @@
 #SBATCH --cpus-per-task=20
 #SBATCH --mem=20G
 #SBATCH --gres=nvme:280
-#SBATCH --output=std_t1.out
-#SBATCH --error=std_t1.err
+#SBATCH --output=std_t4.out
+#SBATCH --error=std_t4.err
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
 
