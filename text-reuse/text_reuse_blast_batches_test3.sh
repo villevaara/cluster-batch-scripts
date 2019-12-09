@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=TR_bb_t3_e-9_t10
+#SBATCH --job-name=TR_bb_t3_e-9_c10
 #SBATCH --account=Project_2000230
 #SBATCH --partition=small
 #SBATCH --time=72:00:00
