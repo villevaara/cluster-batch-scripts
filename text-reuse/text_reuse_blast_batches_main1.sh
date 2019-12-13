@@ -24,5 +24,5 @@ srun python blast_batches.py --output_folder="$LOCAL_SCRATCH/blast_work" --batch
 echo "SHELLSCRIPT - $(date) - Python script done. Copying results."
 cd /scratch/project_2000230/txt_reuse/blast_work_full_testsets_results
 mkdir set1
-scp -r $LOCAL_SCRATCH/blast_work/data_out /scratch/project_2000230/txt_reuse/results
+scp -r $LOCAL_SCRATCH/blast_work/data_out/* /scratch/project_2000230/txt_reuse/results
 echo "SHELLSCRIPT - $(date) - Job finished."
