@@ -22,7 +22,5 @@ scp -r /scratch/project_2000230/txt_reuse/blast_work $LOCAL_SCRATCH
 echo "SHELLSCRIPT - $(date) - Copying done to LOCAL_SCRATCH"
 srun python blast_batches.py --output_folder="$LOCAL_SCRATCH/blast_work" --batch_folder="$LOCAL_SCRATCH/blast_work/data_out" --threads=40 --text_count=5203431 --qpi=1000 --iter=0 --e_value=0.000000001
 echo "SHELLSCRIPT - $(date) - Python script done. Copying results."
-cd /scratch/project_2000230/txt_reuse/blast_work_full_testsets_results
-mkdir set1
 scp -r $LOCAL_SCRATCH/blast_work/data_out/* /scratch/project_2000230/txt_reuse/results_qpi1000
 echo "SHELLSCRIPT - $(date) - Job finished."
