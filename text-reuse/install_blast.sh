@@ -1,5 +1,5 @@
 # For some reason gcc/9.1.0 doesn't compile BLAST. Go figure.
-module load gcc/8.3.0
+module load gcc/7.4.0
 cd $HOME/customblast
 # BLAST from 2.7.1 onward requires LMDB library. This will install it locally.
 wget https://github.com/LMDB/lmdb/archive/LMDB_0.9.24.tar.gz
@@ -18,5 +18,5 @@ tar -xvf ncbi-blast-271-src-custom.tar.gz
 cd ncbi-blast-2.7.1+-src/
 cd c++/
 ./configure
-make
+make all_r
 export PATH="$HOME/customblast/ncbi-blast-2.7.1+-src/c++/ReleaseMT/bin:$PATH"

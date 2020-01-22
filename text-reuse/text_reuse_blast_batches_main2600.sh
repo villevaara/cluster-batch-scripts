@@ -15,7 +15,10 @@ cd /scratch/project_2000230/txt_reuse/blast_ecco/
 module load python-data/3.7.3-1
 pip install -r requirements.txt --user
 cd /scratch/project_2000230/txt_reuse/blast_ecco/code/work
-export PATH="/scratch/project_2000230/txt_reuse/ncbi-blast-2.5.0+-src/c++/ReleaseMT/bin:$PATH"
+
+export LMDB_PATH="$HOME/localinstall/usr/local"
+export PATH="$PATH:$HOME/localinstall/usr/local/bin"
+export PATH="$HOME/customblast/ncbi-blast-2.7.1+-src/c++/ReleaseMT/bin:$PATH"
 
 echo "SHELLSCRIPT - $(date) - Copying data to LOCAL_SCRATCH"
 scp -r /scratch/project_2000230/txt_reuse/blast_work $LOCAL_SCRATCH
