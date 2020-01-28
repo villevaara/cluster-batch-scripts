@@ -18,7 +18,7 @@ cd /scratch/project_2000230/txt_reuse/blast_ecco/code/work
 
 export LMDB_PATH="$HOME/localinstall/usr/local"
 export PATH="$PATH:$HOME/localinstall/usr/local/bin"
-export PATH="$HOME/customblast/ncbi-blast-2.7.1+-src/c++/ReleaseMT/bin:$PATH"
+export PATH="$HOME/customblast/ncbi-blast-2.6.0+-src/c++/ReleaseMT/bin:$PATH"
 
 echo "SHELLSCRIPT - $(date) - Copying data to LOCAL_SCRATCH"
 scp -r /scratch/project_2000230/txt_reuse/blast_work $LOCAL_SCRATCH
@@ -27,3 +27,4 @@ srun python blast_batches.py --output_folder="$LOCAL_SCRATCH/blast_work" --batch
 echo "SHELLSCRIPT - $(date) - Python script done. Copying results."
 scp -r $LOCAL_SCRATCH/blast_work/data_out/* /scratch/project_2000230/txt_reuse/results_qpi1000
 echo "SHELLSCRIPT - $(date) - Job finished."
+blastp -version
