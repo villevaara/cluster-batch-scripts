@@ -15,6 +15,7 @@ blastp -db textdb
 ## Current version DB size
 
 29.1.2020 DB size was 1,302,141 texts.
+text_count=1302141
 qpi 1000
 1303 queries
 index of last query=1302 (starts with 0)
@@ -26,6 +27,16 @@ index of last query=1302 (starts with 0)
    * Number of iterations needed to run is number of items in DB / qpi (queries per iteration) rounded up.
    * qpi 1000 seems to work fine with large DB.
 
-## Time use estimate
+## Submitted jobs
 
+| iter | CPU | CPU% | MEM | MEM% |
+| ---- | --- | ---- | --- | ---- |
+| 0    | 40  |      | 15  |      |
+| 1    | 40  |      | 15  |      |
+| 600  | 40  |      | 15  |      |
 
+## Completed jobs
+
+| iter | CPU | CPU% | MEM | MEM% |
+| ---- | --- | ---- | --- | ---- |
+|      |     |      |     |      |
