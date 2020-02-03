@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=TR_i$1-$2
+#SBATCH --job-name=TR_range
 #SBATCH --account=Project_2000230
 #SBATCH --partition=small
 #SBATCH --time=72:00:00
@@ -10,8 +10,8 @@
 #SBATCH --gres=nvme:280
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
-#SBATCH --output=logs/tr_range_%j_$1_$2.out
-#SBATCH --error=logs/tr_range_%j_$1_$2.err
+#SBATCH --output=logs/tr_range_%j.out
+#SBATCH --error=logs/tr_range_%j.err
 # note: For array jobs %A is job ID, %a is array index. For normal jobs %j is job ID.
 
 # created: Feb 3, 2020

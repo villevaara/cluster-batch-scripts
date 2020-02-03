@@ -23,6 +23,8 @@ Pulling latest repo data is included in that one.
 
 ### Passing variables to SLURM scripts
 
-https://help.rc.ufl.edu/doc/Using_Variables_in_SLURM_Jobs
 https://stackoverflow.com/questions/55867700/how-to-pass-an-argument-in-the-sbatch-command-line
 
+#### Seems you can't use those values in the SBATCH -lines at the start of the script (job name, logs, etc ...):
+
+https://help.rc.ufl.edu/doc/Using_Variables_in_SLURM_Jobs
