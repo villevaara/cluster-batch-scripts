@@ -5,6 +5,12 @@ Some general observations:
 * Efficiency vs number of cores used scales in a linear fashion. The same job costs roughly the same with eg. 40 or 10 cores, with the 10 core job taking four times as long to complete and ending up using the same amount of credits. If memory use was a more significant factor the higher core count would be cheaper.
 * 12G of memory seems to be sufficient, based on observations of actual memory use with `top`.
 
+## Scripts:
+
+* **install_blast.sh** - Compile modified version of BLAST on CSC Puhti.
+* **text_reuse_data_preparer.sh** - Prepares BLAST database from database -ready data (specific tar.gz compressed JSON format). Needs to be run before the _blast_batches_ -scripts. 
+* **text_reuse_blast_batches_main[?].sh** - Blast is run in batches. These run specific iterations of those batches.
+
 ## Finding database size (from avjves instructions):
 ```
 cd output_folder ##output_folder is the name given when running data_preparer etc.

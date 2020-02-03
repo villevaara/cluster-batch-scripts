@@ -10,6 +10,8 @@
 #SBATCH --gres=nvme:280
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
+# created: Feb 3, 2020
+# author: Ville Vaara
 
 cd /scratch/project_2000230/txt_reuse/blast_ecco/
 module load python-data/3.7.3-1
