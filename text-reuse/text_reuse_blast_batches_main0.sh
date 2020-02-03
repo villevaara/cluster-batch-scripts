@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=TR_e-9_qpi1000_t40_i0
+#SBATCH --job-name=TR_i0
 #SBATCH --account=Project_2000230
 #SBATCH --partition=longrun
 #SBATCH --time=240:00:00

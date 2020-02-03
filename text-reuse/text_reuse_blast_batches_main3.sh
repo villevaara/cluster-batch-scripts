@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=TR_i2
+#SBATCH --job-name=TR_i3
 #SBATCH --account=Project_2000230
 #SBATCH --partition=longrun
 #SBATCH --time=240:00:00
