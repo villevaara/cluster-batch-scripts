@@ -7,6 +7,7 @@ CSC uses SLURM _(Simple Linux Utility for Resource Management)_ to run batch scr
 ## CSC Documentation
 
 [Taito Modules 2.1 - Basic usage](https://research.csc.fi/taito-modules-basic-usage#2.1.1)
+[More recent CSC docs - Array jobs](https://docs.csc.fi/computing/running/array-jobs/)
 
 ### Running batch jobs
 
