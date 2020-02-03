@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=TR_e-9_qpi1000_t40_i600
+#SBATCH --job-name=TR_i600
 #SBATCH --account=Project_2000230
 #SBATCH --partition=small
 #SBATCH --time=72:00:00
@@ -10,6 +10,10 @@
 #SBATCH --gres=nvme:280
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
+#SBATCH --output=logs/tr_array_%j.out
+#SBATCH --error=logs/tr_array_%j.err
+# note: For array jobs %A is job ID, %a is array index. For normal jobs %j is job ID.
+
 # created: Feb 3, 2020
 # author: Ville Vaara
 
