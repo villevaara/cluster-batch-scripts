@@ -1,6 +1,6 @@
-# CSC Taito Batch Scripts
+# Cluster (Computing) Batch Scripts
 
-Collected CSC Taito batch scripts. Can prob be adopted for other environments as well. 
+Batch scripts for cluster computing tasks. CSC Taito (discontinued), CSC Puhti. Each subdirectory for a specific cluster computing project, with READMe specifying the environment.
 
 CSC uses SLURM _(Simple Linux Utility for Resource Management)_ to run batch scripts. [Their instructions are here.](https://research.csc.fi/taito-using-slurm-commands-to-execute-batch-jobs)
 
