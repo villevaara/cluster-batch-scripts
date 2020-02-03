@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=textReuseECCOdataPrep
+#SBATCH --job-name=textReuse_ECCO_EEBO_dataPrep
 #SBATCH --account=Project_2000230
 #SBATCH --partition=small
 #SBATCH --time=24:00:00
@@ -7,8 +7,8 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=64G
-#SBATCH --output=std_data_prep.out
-#SBATCH --error=std_data_prep.err
+#SBATCH --output=logs/tr_data_prep_%j.out
+#SBATCH --error=logs/tr_data_prep_%j.err
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
 
