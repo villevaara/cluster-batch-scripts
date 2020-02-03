@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=64G
 #SBATCH --output=logs/tr_data_prep_%j.out
-#SBATCH --error=logs/tr_data_prep_%j.err
+#SBATCH --error=logs/err/tr_data_prep_%j.err
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
 

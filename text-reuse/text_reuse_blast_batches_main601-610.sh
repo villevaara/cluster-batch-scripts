@@ -12,7 +12,7 @@
 #SBATCH --mail-user=villepvaara@gmail.com
 #SBATCH --array=601-610
 #SBATCH --output=logs/tr_array_%A_%a.out
-#SBATCH --error=logs/tr_array_%A_%a.err
+#SBATCH --error=logs/err/tr_array_%A_%a.err
 # note: For array jobs %A is job ID, %a is array index. For normal jobs %j is job ID.
 
 # created: Feb 3, 2020
