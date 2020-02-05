@@ -35,12 +35,12 @@ then
     echo "Set cores (-c | --cores) to value between 1-40."
     error=1
 fi
-if [ $cores -eq 10000 ]
+if [ $start -eq 10000 ]
 then
     echo "Set start (-s | --start) value."
     error=1
 fi
-if [ $cores -eq 10000 ]
+if [ $end -eq 10000 ]
 then
     echo "Set end (-e | --end) value."
     error=1
