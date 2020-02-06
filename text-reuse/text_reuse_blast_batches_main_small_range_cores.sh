@@ -40,8 +40,9 @@ for i in `seq $1 $2`
 do
    srun python blast_batches.py --output_folder="$LOCAL_SCRATCH/blast_work" --batch_folder="$LOCAL_SCRATCH/blast_work/data_out" --threads=$3 --text_count=1302141 --qpi=1000 --iter=$i --e_value=0.000000001
    echo "SHELLSCRIPT - Finished iter $i."
+   echo "SHELLSCRIPT - $(date) - Rsync results."
+   rsync -r $LOCAL_SCRATCH/blast_work/data_out/* /scratch/project_2000230/txt_reuse/results_qpi1000
 done
-echo "SHELLSCRIPT - $(date) - Python script done. Copying results."
-scp -r $LOCAL_SCRATCH/blast_work/data_out/* /scratch/project_2000230/txt_reuse/results_qpi1000
+# scp -r $LOCAL_SCRATCH/blast_work/data_out/* /scratch/project_2000230/txt_reuse/results_qpi1000
 echo "SHELLSCRIPT - $(date) - Job finished."
 blastp -version
