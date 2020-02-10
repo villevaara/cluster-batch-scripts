@@ -43,4 +43,4 @@ then
 fi
 
 echo "tr longrun i$iter cores: $cores"
-sbatch --job-name=tr_i$iter --output=logs/tr_i$iter.out --error=logs/err/tr_i$iter.err --cpus-per-task=$cores text_reuse_blast_batches_main_longrun_single_cores.sh $iter $cores
+sbatch --job-name=tr_i$iter --output=logs/tr_i$iter_%j.out --error=logs/err/tr_i$iter_%j.err --cpus-per-task=$cores text_reuse_blast_batches_main_longrun_single_cores.sh $iter $cores
