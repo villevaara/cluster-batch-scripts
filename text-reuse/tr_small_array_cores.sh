@@ -51,4 +51,4 @@ then
 fi
 
 echo "tr small i$start-$end cores: $cores"
-sbatch --job-name=tr_i$start-$end --output=logs/tr_i$start-$end_%j.out --error=logs/err/tr_i$start-$end_%j.err --cpus-per-task=$cores text_reuse_blast_batches_main_small_array_cores.sh $start $end $cores
+sbatch --job-name=tr_array_i$start-$end --output=logs/tr_i$start-$end_%j.out --error=logs/err/tr_i$start-$end_%j.err --cpus-per-task=$cores text_reuse_blast_batches_main_small_array_cores.sh $start $end $cores
