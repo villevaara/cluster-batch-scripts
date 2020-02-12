@@ -8,9 +8,9 @@ usage()
     echo "usage: tr_small_array_cores [-f cores] [-s start] [-e end]"
 }
 
-cores=10000
-start=10000
-end=10000
+cores=-1
+start=-1
+end=-1
 time=4
 error=0
 
@@ -34,17 +34,17 @@ while [ "$1" != "" ]; do
     shift
 done
 
-if [ $cores -eq 10000 ]
+if [ $cores -eq -1 ]
 then
     echo "Set cores (-c | --cores) to value between 1-40."
     error=1
 fi
-if [ $start -eq 10000 ]
+if [ $start -eq -1 ]
 then
     echo "Set start (-s | --start) value."
     error=1
 fi
-if [ $end -eq 10000 ]
+if [ $end -eq -1 ]
 then
     echo "Set end (-e | --end) value."
     error=1
