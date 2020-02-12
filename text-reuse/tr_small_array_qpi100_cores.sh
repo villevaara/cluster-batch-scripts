@@ -25,8 +25,8 @@ while [ "$1" != "" ]; do
         -e | --end )            shift
                                 end=$1
                                 ;;
-        -t | --time )            shift
-                                end=$1
+        -t | --time )           shift
+                                time=$1
                                 ;;
         * )                     usage
                                 exit 1
