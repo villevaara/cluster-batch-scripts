@@ -11,6 +11,7 @@ usage()
 cores=10000
 start=10000
 end=10000
+time=4
 error=0
 
 while [ "$1" != "" ]; do
@@ -22,6 +23,9 @@ while [ "$1" != "" ]; do
                                 start=$1
                                 ;;
         -e | --end )            shift
+                                end=$1
+                                ;;
+        -t | --time )            shift
                                 end=$1
                                 ;;
         * )                     usage
@@ -50,6 +54,6 @@ then
     exit 1
 fi
 
-echo "tr small i$start-$end cores: $cores"
+echo "tr small i$start-$end cores: $cores timelim: $time h"
 
-sbatch --array=$start-$end --job-name=tr_i$start-$end --output=logs/tr_i$start-$end_%a_%A.out --error=logs/err/tr_i$start-$end_%a_%A.err --cpus-per-task=$cores text_reuse_blast_batches_main_small_qpi100_array_cores.sh $cores
+sbatch --array=$start-$end --job-name=tr_q_i$start-$end --output=logs/tr_q_i$start-$end_%a_%A.out --error=logs/err/tr_q_i$start-$end_%a_%A.err --time=$time:00:00 --cpus-per-task=$cores text_reuse_blast_batches_main_small_qpi100_array_cores.sh $cores
