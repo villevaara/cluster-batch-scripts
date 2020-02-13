@@ -57,5 +57,5 @@ fi
 actual_start=$((10*$start))
 actual_end=$((10*$end+9))
 
-echo "i$actual_start-$actual_end (addition $addition) cores: $cores timelim: $time h"
+echo -e "\ni$actual_start-$actual_end \ncores: $cores \ntime_limit: $time h \n"
 sbatch --array=$start-$end --job-name=tr_q_i$actual_start-$actual_end --output=logs/tr_q_i$actual_start-$actual_end_%a_%A.out --error=logs/err/tr_q_i$actual_start-$actual_end_%a_%A.err --time=$time:00:00 --cpus-per-task=$cores text_reuse_blast_batches_main_small_qpi100_arrayrange_cores.sh $cores
