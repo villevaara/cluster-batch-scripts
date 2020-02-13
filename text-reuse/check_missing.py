@@ -23,12 +23,15 @@ for item in all_indices:
     if item not in processed_indices:
         missing_indices.append(item)
 
+missing_indices = set(missing_indices)
+
 this_missing = []
 for index in range(0, 13023):
     if index in missing_indices:
         this_missing.append(index)
-    if index not in missing_indices:
+    if index not in missing_indices and len(this_missing) > 0:
         print(str(min(this_missing)) + "-" + str(max(this_missing)))
         this_missing = []
+
 if len(this_missing) > 0:
     print(str(min(this_missing)) + "-" + str(max(this_missing)))
