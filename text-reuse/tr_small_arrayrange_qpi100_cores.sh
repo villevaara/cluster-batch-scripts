@@ -5,15 +5,14 @@
 
 usage()
 {
-    echo "usage: tr_small_array_cores [-f cores] [-s start] [-e end]"
+    echo "usage: tr_small_arrayrange__qpi100_cores [-f cores] [-s start] [-e end] ([-t time])"
 }
 
 cores=-1
 start=-1
 end=-1
-time=4
+time=8
 error=0
-addition=-1
 
 while [ "$1" != "" ]; do
     case $1 in
@@ -28,9 +27,6 @@ while [ "$1" != "" ]; do
                                 ;;
         -t | --time )           shift
                                 time=$1
-                                ;;
-        -a | --addition )       shift
-                                addition=$1
                                 ;;
         * )                     usage
                                 exit 1
@@ -53,19 +49,13 @@ then
     echo "Set end (-e | --end) value."
     error=1
 fi
-if [ $addition -eq -1 ]
-then
-    echo "Set addition (-a | --addition) value."
-    error=1
-fi
 if [ $error -eq 1 ]
 then
     exit 1
 fi
 
-actual_start=$(($addition+$start))
-actual_end=$(($addition+$end))
+actual_start=$((10*$start))
+actual_end=$((10*$end+9))
 
 echo "i$actual_start-$actual_end (addition $addition) cores: $cores timelim: $time h"
-
-sbatch --array=$start-$end --job-name=tr_q_i$actual_start-$actual_end --output=logs/tr_q_i$actual_start-$actual_end_%a_%A.out --error=logs/err/tr_q_i$actual_start-$actual_end_%a_%A.err --time=$time:00:00 --cpus-per-task=$cores text_reuse_blast_batches_main_small_qpi100_array_cores.sh $cores $addition
+sbatch --array=$start-$end --job-name=tr_q_i$actual_start-$actual_end --output=logs/tr_q_i$actual_start-$actual_end_%a_%A.out --error=logs/err/tr_q_i$actual_start-$actual_end_%a_%A.err --time=$time:00:00 --cpus-per-task=$cores text_reuse_blast_batches_main_small_qpi100_arrayrange_cores.sh $cores

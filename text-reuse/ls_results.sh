@@ -1,1 +1,1 @@
-ls -lah /scratch/project_2000230/txt_reuse/results_qpi1000/
+ls -lah /scratch/project_2000230/txt_reuse/results_qpi100/
