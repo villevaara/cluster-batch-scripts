@@ -5,7 +5,7 @@
 
 usage()
 {
-    echo "usage: tr_small_range_cores [-f cores] [-s start] [-e end]"
+    echo "usage: tr_small_array_cores [-f cores] [-s start] [-e end]"
 }
 
 cores=10000
@@ -51,4 +51,5 @@ then
 fi
 
 echo "tr small i$start-$end cores: $cores"
-sbatch --job-name=tr_array_i$start-$end --output=logs/tr_i$start-$end_%j.out --error=logs/err/tr_i$start-$end_%j.err --cpus-per-task=$cores text_reuse_blast_batches_main_small_array_cores.sh $start $end $cores
+
+sbatch --array=$start-$end --job-name=tr_i$start-$end --output=logs/tr_i$start-$end_%a_%A.out --error=logs/err/tr_i$start-$end_%a_%A.err --cpus-per-task=$cores text_reuse_blast_batches_main_small_array_cores.sh $cores

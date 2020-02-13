@@ -1,15 +1,17 @@
-#!/bin/bash
-#SBATCH --job-name=TR_array
+#!/bin/bash -l
+#SBATCH --job-name=TR_range
 #SBATCH --account=Project_2000230
 #SBATCH --partition=small
-#SBATCH --time=24:00:00
+#SBATCH --time=6:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=40
-#SBATCH --mem=16G
+#SBATCH --cpus-per-task=20
+#SBATCH --mem=32G
+#SBATCH --array=1-50
 #SBATCH --gres=nvme:280
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
+
 #SBATCH --output=logs/tr_range_%j.out
 #SBATCH --error=logs/err/tr_range_%j.err
 # note: For array jobs %A is job ID, %a is array index. For normal jobs %j is job ID.
@@ -36,16 +38,9 @@ export PATH="$HOME/customblast/ncbi-blast-2.6.0+-src/c++/ReleaseMT/bin:$PATH"
 echo "SHELLSCRIPT - $(date) - Copying data to LOCAL_SCRATCH"
 srun scp -r /scratch/project_2000230/txt_reuse/blast_work $LOCAL_SCRATCH
 echo "SHELLSCRIPT - $(date) - Copying done to LOCAL_SCRATCH"
-for i in `seq $1 $2`
-do
-  echo "srun python blast_batches.py --output_folder='$LOCAL_SCRATCH/blast_work' --batch_folder='$LOCAL_SCRATCH/blast_work/data_out' --threads=$3 --text_count=1302141 --qpi=1000 --iter=$i --e_value=0.000000001 && srun rsync -r $LOCAL_SCRATCH/blast_work/data_out/* /scratch/project_2000230/txt_reuse/results_qpi1000" >> tr_commands_%j.txt
-done
-
-# execute the md5commands as an array job
-sbatch_commandlist -commands tr_commands_%j.txt -project Project_2000230 -mem 16G -t 8:00:00 -threads $3
-
-# remove commands file
-rm -f md5commands.txt
-
+srun python blast_batches.py --output_folder="$LOCAL_SCRATCH/blast_work" --batch_folder="$LOCAL_SCRATCH/blast_work/data_out" --threads=$1 --text_count=1302141 --qpi=1000 --iter=${SLURM_ARRAY_TASK_ID} --e_value=0.000000001
+echo "SHELLSCRIPT - Finished iter ${SLURM_ARRAY_TASK_ID}."
+echo "SHELLSCRIPT - $(date) - Rsync results."
+srun rsync -r $LOCAL_SCRATCH/blast_work/data_out/* /scratch/project_2000230/txt_reuse/results_qpi1000
 echo "SHELLSCRIPT - $(date) - Job finished."
 blastp -version
