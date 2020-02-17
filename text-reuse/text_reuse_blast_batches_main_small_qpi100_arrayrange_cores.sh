@@ -48,7 +48,7 @@ for i in `seq 0 9`
 do
    thisiter=$(($startiter+$i))
    srun python blast_batches.py --output_folder="$LOCAL_SCRATCH/blast_work" --batch_folder="$LOCAL_SCRATCH/blast_work/data_out" --threads=$1 --text_count=1302141 --qpi=100 --iter=$thisiter --e_value=0.000000001
-   echo "SHELLSCRIPT - Finished iter $thisiter."
+   echo "SHELLSCRIPT - Finished arrayrange iter $thisiter."
    echo "SHELLSCRIPT - $(date) - Rsync results."
    srun rsync -v -r $LOCAL_SCRATCH/blast_work/data_out/* /scratch/project_2000230/txt_reuse/results_qpi100
    echo "SHELLSCRIPT - $(date) - Rsync done."
