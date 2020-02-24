@@ -5,7 +5,7 @@
 
 usage()
 {
-    echo "usage: tr_small_arrayrange__qpi100_cores [-f cores] [-s start] [-e end] ([-t time])"
+    echo "usage: tr_arrayrange [-f cores] [-s start (in tens)] [-e end (in tens)] [-a addition] [-t time (default 8)]"
 }
 
 cores=-1
