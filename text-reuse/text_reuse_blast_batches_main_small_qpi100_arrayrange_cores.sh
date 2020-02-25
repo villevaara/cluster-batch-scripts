@@ -39,7 +39,7 @@ export LMDB_PATH="$HOME/localinstall/usr/local"
 export PATH="$PATH:$HOME/localinstall/usr/local/bin"
 export PATH="$HOME/customblast/ncbi-blast-2.6.0+-src/c++/ReleaseMT/bin:$PATH"
 
-startiter=$((${SLURM_ARRAY_TASK_ID}*10+$addition))
+startiter=$((${SLURM_ARRAY_TASK_ID}*10+$2))
 
 echo "SHELLSCRIPT - $(date) - Copying data to LOCAL_SCRATCH"
 srun scp -r /scratch/project_2000230/txt_reuse/blast_work $LOCAL_SCRATCH
