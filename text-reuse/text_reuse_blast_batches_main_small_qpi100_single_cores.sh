@@ -11,8 +11,8 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
 
-#SBATCH --output=logs/tr_range_%j.out
-#SBATCH --error=logs/err/tr_range_%j.err
+#SBATCH --output=logs/tr_q_i_%j.out
+#SBATCH --error=logs/err/tr_q_i_%j.err
 # note: For array jobs %A is job ID, %a is array index. For normal jobs %j is job ID.
 
 # created: Feb 3, 2020
@@ -31,6 +31,10 @@ cd /scratch/project_2000230/txt_reuse/blast_ecco/code/work
 export LMDB_PATH="$HOME/localinstall/usr/local"
 export PATH="$PATH:$HOME/localinstall/usr/local/bin"
 export PATH="$HOME/customblast/ncbi-blast-2.6.0+-src/c++/ReleaseMT/bin:$PATH"
+
+echo "----------------------------------------------------------------------" 
+echo "SINGLE job cores:$1 iter:$2 timelim:$SBATCH_TIMELIMIT"
+echo "----------------------------------------------------------------------" 
 
 echo "SHELLSCRIPT - $(date) - Copying data to LOCAL_SCRATCH"
 srun scp -r /scratch/project_2000230/txt_reuse/blast_work $LOCAL_SCRATCH

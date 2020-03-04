@@ -68,4 +68,4 @@ actual_end=$(($addition+$end))
 
 echo "i$actual_start-$actual_end (addition $addition) cores: $cores timelim: $time h"
 
-sbatch --array=$start-$end --job-name=tr_q_i$actual_start-$actual_end --output=logs/tr_q_i$actual_start-$actual_end_%a_%A.out --error=logs/err/tr_q_i$actual_start-$actual_end_%a_%A.err --time=$time:00:00 --cpus-per-task=$cores text_reuse_blast_batches_main_small_qpi100_array_cores.sh $cores $addition
+sbatch --array=$start-$end --job-name=tr_q_i$actual_start-$actual_end --output=logs/a_$actual_start-${actual_end}_i%a_%A.out --error=logs/err/a_$actual_start-${actual_end}_i%a_%A.err --time=$time:00:00 --cpus-per-task=$cores text_reuse_blast_batches_main_small_qpi100_array_cores.sh $cores $addition

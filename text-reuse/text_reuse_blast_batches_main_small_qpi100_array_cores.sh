@@ -26,6 +26,9 @@
 # sbatch text_reuse_blast_batches_main_small_generic.sh 700 709 20
 # And then the arguments will be available inside the shell script as $1 $2 $3
 
+# 1: cores
+# 2: addition
+
 cd /scratch/project_2000230/txt_reuse/blast_ecco/
 module load python-data/3.7.3-1
 export PYTHONPATH=/appl/soft/ai/miniconda3/envs/python-data-3.7.3-1/lib/python3.7/site-packages/
@@ -37,6 +40,10 @@ export PATH="$PATH:$HOME/localinstall/usr/local/bin"
 export PATH="$HOME/customblast/ncbi-blast-2.6.0+-src/c++/ReleaseMT/bin:$PATH"
 
 thisiter=$(($2+${SLURM_ARRAY_TASK_ID}))
+
+echo "-----------------------------------------------------------" 
+echo "ARRAY job cores:$1 iter:$thisiter timelim:$SBATCH_TIMELIMIT"
+echo "-----------------------------------------------------------" 
 
 echo "SHELLSCRIPT - $(date) - Copying data to LOCAL_SCRATCH"
 srun scp -r /scratch/project_2000230/txt_reuse/blast_work $LOCAL_SCRATCH
