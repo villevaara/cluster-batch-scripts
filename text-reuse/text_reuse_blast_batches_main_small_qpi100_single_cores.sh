@@ -6,7 +6,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=20
-#SBATCH --mem=16G
+#SBATCH --mem=32G
 #SBATCH --gres=nvme:280
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
