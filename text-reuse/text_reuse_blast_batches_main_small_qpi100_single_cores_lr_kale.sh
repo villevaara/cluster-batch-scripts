@@ -1,7 +1,7 @@
 #!/bin/bash -l
 #SBATCH --job-name=TR_range
 #SBATCH --account=Project_2000230
-#SBATCH --partition=longrun
+#SBATCH --partition=small
 #SBATCH --time=168:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
