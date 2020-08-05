@@ -1,7 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=textReuse_ECCO_EEBO_dataPrep
-#SBATCH --account=Project_2000230
-#SBATCH --partition=small
+#SBATCH --partition=short
 #SBATCH --time=24:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
