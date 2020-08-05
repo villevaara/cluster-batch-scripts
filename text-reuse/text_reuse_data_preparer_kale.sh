@@ -21,6 +21,6 @@ cd $WRKDIR/blast_ecco/code/work
 export PATH="$WRKDIR/customblast/ncbi-blast-2.6.0+-src/c++/ReleaseMT/bin:$PATH"
 
 echo "SHELLSCRIPT - $(date) - Starting data preparer."
-srun python data_preparer.py --data_location="$WRKDIR/txt_reuse/chunks_for_blast/" --output_folder="$WRKDIR/txt_reuse/blast_work/" --language="ENG" --threads=1
+srun python data_preparer.py --data_location="/wrk/users/vvaara/txt_reuse/chunks_for_blast/" --output_folder="/wrk/users/vvaara/txt_reuse/blast_work/" --language="ENG" --threads=1
 echo "SHELLSCRIPT - $(date) - Job finished. BLAST version:"
 blastp -version
