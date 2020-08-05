@@ -13,7 +13,7 @@
 #SBATCH --mail-user=villepvaara@gmail.com
 
 cd $WRKDIR/blast_ecco/
-module load python-data/3.7.3-1
+module load Python/3.6.6-intel-2018b
 pip install -r requirements.txt --user
 cd $WRKDIR/blast_ecco/code/work
 
