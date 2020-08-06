@@ -37,7 +37,7 @@ echo "----------------------------------------------------------------------"
 # echo "SHELLSCRIPT - $(date) - Copying data to LOCAL_SCRATCH"
 # srun scp -r $WRKDIR/txt_reuse/blast_work $LOCAL_SCRATCH
 # echo "SHELLSCRIPT - $(date) - Copying done to LOCAL_SCRATCH"
-srun python blast_batches.py --output_folder="$WRKDIR/txt_reuse/chunks_for_blast" --batch_folder="$WRKDIR/txt_reuse/results_qpi100" --threads=$1 --text_count=1302141 --qpi=100 --iter=$2 --e_value=0.000000001
+srun python blast_batches.py --output_folder="$WRKDIR/txt_reuse/blast_work" --batch_folder="$WRKDIR/txt_reuse/results_qpi100" --threads=$1 --text_count=1302141 --qpi=100 --iter=$2 --e_value=0.000000001
 echo "SHELLSCRIPT - Finished iter $thisiter."
 echo "SHELLSCRIPT - $(date) - Job finished."
 blastp -version
