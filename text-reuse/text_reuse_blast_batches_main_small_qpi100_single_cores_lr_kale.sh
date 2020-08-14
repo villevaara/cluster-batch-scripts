@@ -5,7 +5,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=40
-#SBATCH --mem=32G
+#SBATCH --mem=64G
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
 
@@ -13,7 +13,7 @@
 #SBATCH --error=logs/err/tr_q_i_%j.err
 # note: For array jobs %A is job ID, %a is array index. For normal jobs %j is job ID.
 
-# created: Feb 3, 2020
+# created: Aug 14, 2020
 # author: Ville Vaara
 
 # vars:
@@ -22,12 +22,9 @@
 
 cd /wrk/users/vvaara/blast_ecco
 module load Python/3.6.6-intel-2018b
-# export PYTHONPATH=/appl/soft/ai/miniconda3/envs/python-data-3.7.3-1/lib/python3.7/site-packages/
 pip install -r requirements.txt --user
 cd $WRKDIR/blast_ecco/code/work
 
-# export LMDB_PATH="$HOME/localinstall/usr/local"
-# export PATH="$PATH:$HOME/localinstall/usr/local/bin"
 export PATH="$WRKDIR/customblast/ncbi-blast-2.6.0+-src/c++/ReleaseMT/bin:$PATH"
 
 echo "----------------------------------------------------------------------" 
