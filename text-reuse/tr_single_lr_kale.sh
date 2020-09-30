@@ -5,12 +5,12 @@
 
 usage()
 {
-    echo "usage: tr_single [-c cores (default 40)] [-i iter] [-t time (default 7 days)]"
+    echo "usage: tr_single_lr_kale [-c cores (default 40)] [-i iter] [-t time (default 14 days)]"
 }
 
 cores=40
 iter=-1
-time=168
+time=336
 error=0
 
 while [ "$1" != "" ]; do
