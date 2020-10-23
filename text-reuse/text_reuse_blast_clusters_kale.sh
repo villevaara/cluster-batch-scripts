@@ -31,4 +31,4 @@ echo "----------------------------------------------------------------------"
 echo "CLUSTERIZER"
 echo "----------------------------------------------------------------------" 
 
-srun python clusterizer.py --output_folder="$WRKDIR/txt_reuse/blast_work_from_puhti/blast_work" --node_similarity=1 --threads=4 --max_length=10000000
+srun python clusterizer.py --output_folder="$WRKDIR/txt_reuse/blast_work_from_puhti/blast_work" --node_similarity=1 --threads=40 --max_length=10000000
