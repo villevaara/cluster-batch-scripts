@@ -47,4 +47,4 @@ fi
 
 echo "i$iter cores: $cores timelim: $time h"
 
-sbatch --job-name=tr_q_i$iter --output=logs/s_i${iter}_%j.out --error=logs/err/s_i${iter}_%j.err --time=$time:00:00 --cpus-per-task=$cores text_reuse_blast_batches_main_small_qpi100_single_cores_lr.sh $cores $iter
+sbatch --job-name=tr_q_i$iter --output=logs/s_i${iter}_%j.out --error=logs/err/s_i${iter}_%j.err --time=$time:00:00 --cpus-per-task=$cores text_reuse_blast_batches_main_small_qpi100_single_cores_lr.sh $cores $iter $time

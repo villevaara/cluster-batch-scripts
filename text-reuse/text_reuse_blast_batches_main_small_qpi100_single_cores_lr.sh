@@ -21,6 +21,7 @@
 # vars:
 # 1: number of cores
 # 2: iter#
+# 3: tiem
 
 cd /scratch/project_2000230/txt_reuse/blast_ecco/
 module load python-data/3.7.3-1
@@ -33,7 +34,7 @@ export PATH="$PATH:$HOME/localinstall/usr/local/bin"
 export PATH="$HOME/customblast/ncbi-blast-2.6.0+-src/c++/ReleaseMT/bin:$PATH"
 
 echo "----------------------------------------------------------------------" 
-echo "SINGLE job cores:$1 iter:$2 timelim:$SBATCH_TIMELIMIT"
+echo "SINGLE JOB - cores: $1 - iter: $2 - timelim: $3"
 echo "----------------------------------------------------------------------" 
 
 echo "SHELLSCRIPT - $(date) - Copying data to LOCAL_SCRATCH"
