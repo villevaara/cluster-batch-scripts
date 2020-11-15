@@ -17,6 +17,7 @@
 
 cd $HOME/data_input_text_reuse/code
 module load python-data/3.7.3-1
+export PYTHONPATH=/appl/soft/ai/miniconda3/envs/python-data-3.7.3-1/lib/python3.7/site-packages/
 pip install -r requirements.txt --user
 
 echo "SHELLSCRIPT - $(date) - Starting data finalizer."
