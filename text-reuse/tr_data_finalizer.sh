@@ -5,9 +5,10 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=40
-#SBATCH --mem=8G
-#SBATCH --output=logs/tr_data_final_%j.out
-#SBATCH --error=logs/err/tr_data_final_%j.err
+#SBATCH --mem=16G
+#SBATCH --array=0-9
+#SBATCH --output=logs/tr_data_final_%A_%a.out
+#SBATCH --error=logs/err/tr_data_final_%A_%a.err
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
 
@@ -16,4 +17,4 @@ module load Python/3.6.6-intel-2018b
 pip install -r requirements.txt --user
 
 echo "SHELLSCRIPT - $(date) - Starting data finalizer."
-srun python generate_json_multiprocess_lmdb.py --datadir "/wrk/users/vvaara/txt_reuse/results_qpi100" --outdir "/wrk/users/vvaara/txt_reuse/results_qpi100_filled" --threads 40 --db "/wrk/users/vvaara/txt_reuse/blast_work_from_puhti/blast_work/db/original_data_DB"
+srun python generate_json_multiprocess_lmdb.py --datadir "/wrk/users/vvaara/txt_reuse/results_qpi100_parts/${SLURM_ARRAY_TASK_ID}"" --outdir "/wrk/users/vvaara/txt_reuse/results_qpi100_filled" --threads 40 --db "/wrk/users/vvaara/txt_reuse/blast_work_from_puhti/blast_work/db/original_data_DB"
