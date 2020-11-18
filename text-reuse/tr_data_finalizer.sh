@@ -17,4 +17,4 @@ module load Python/3.6.6-intel-2018b
 pip install -r requirements.txt --user
 
 echo "SHELLSCRIPT - $(date) - Starting data finalizer."
-srun python generate_json_multiprocess_lmdb.py --datadir "/wrk/users/vvaara/txt_reuse/results_qpi100_parts/${SLURM_ARRAY_TASK_ID}"" --outdir "/wrk/users/vvaara/txt_reuse/results_qpi100_filled" --threads 40 --db "/wrk/users/vvaara/txt_reuse/blast_work_from_puhti/blast_work/db/original_data_DB"
+srun python generate_json_multiprocess_lmdb.py --datadir "/wrk/users/vvaara/txt_reuse/results_qpi100_parts/${SLURM_ARRAY_TASK_ID}" --outdir "/wrk/users/vvaara/txt_reuse/results_qpi100_filled" --threads 40 --db "/wrk/users/vvaara/txt_reuse/blast_work_from_puhti/blast_work/db/original_data_DB"
