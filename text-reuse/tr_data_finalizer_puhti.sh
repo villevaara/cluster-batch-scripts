@@ -22,6 +22,6 @@ pip install -r requirements.txt --user
 
 echo "SHELLSCRIPT - $(date) - Starting data finalizer."
 echo "SHELLSCRIPT - $(date) - Copying data to LOCAL_SCRATCH"
-srun scp -r /scratch/project_2000230/txt_reuse/blast_work $LOCAL_SCRATCH
+scp -r /scratch/project_2000230/txt_reuse/blast_work $LOCAL_SCRATCH
 echo "SHELLSCRIPT - $(date) - Copying done to LOCAL_SCRATCH"
-srun python generate_json_multiprocess_lmdb.py --datadir "/scratch/project_2000230/txt_reuse/results_qpi100_parts/${SLURM_ARRAY_TASK_ID}" --outdir "/scratch/project_2000230/txt_reuse/results_qpi100_filled" --threads ${SLURM_CPUS_PER_TASK} --db "$LOCAL_SCRATCH/blast_work/db/original_data_DB"
+python generate_json_multiprocess_lmdb.py --datadir "/scratch/project_2000230/txt_reuse/results_qpi100_parts/${SLURM_ARRAY_TASK_ID}" --outdir "/scratch/project_2000230/txt_reuse/results_qpi100_filled" --threads ${SLURM_CPUS_PER_TASK} --db "$LOCAL_SCRATCH/blast_work/db/original_data_DB"
