@@ -5,8 +5,8 @@
 #SBATCH --time=48:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=40
-#SBATCH --mem=16G
+#SBATCH --cpus-per-task=10
+#SBATCH --mem=8G
 #SBATCH --array=10-19
 #SBATCH --output=logs/tr_data_final_%A_%a.out
 #SBATCH --error=logs/err/tr_data_final_%A_%a.err

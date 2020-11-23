@@ -4,8 +4,8 @@
 #SBATCH --time=24:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=40
-#SBATCH --mem=16G
+#SBATCH --cpus-per-task=10
+#SBATCH --mem=8G
 #SBATCH --array=2-9
 #SBATCH --output=logs/tr_data_final_%A_%a.out
 #SBATCH --error=logs/err/tr_data_final_%A_%a.err
@@ -21,7 +21,7 @@ mkdir -p /wrk/users/vvaara/txt_reuse/temp/array${SLURM_ARRAY_TASK_ID}/db/origina
 rsync -rv --update /wrk/users/vvaara/txt_reuse/blast_work_from_puhti/blast_work/db/original_data_DB/* /wrk/users/vvaara/txt_reuse/temp/array${SLURM_ARRAY_TASK_ID}/db/original_data_DB
 
 echo "SHELLSCRIPT - $(date) - Starting data finalizer."
-python generate_json_multiprocess_lmdb.py --datadir "/wrk/users/vvaara/txt_reuse/results_qpi100_parts/${SLURM_ARRAY_TASK_ID}" --outdir "/wrk/users/vvaara/txt_reuse/results_qpi100_filled" --threads 40 --db "/wrk/users/vvaara/txt_reuse/temp/array${SLURM_ARRAY_TASK_ID}/db/original_data_DB"
+python generate_json_multiprocess_lmdb.py --datadir "/wrk/users/vvaara/txt_reuse/results_qpi100_parts/${SLURM_ARRAY_TASK_ID}" --outdir "/wrk/users/vvaara/txt_reuse/results_qpi100_filled" --threads ${SLURM_CPUS_PER_TASK} --db "/wrk/users/vvaara/txt_reuse/temp/array${SLURM_ARRAY_TASK_ID}/db/original_data_DB"
 
 echo "SHELLSCRIPT - $(date) - DONE - Removing temp directory."
 rm -r /wrk/users/vvaara/txt_reuse/temp/array${SLURM_ARRAY_TASK_ID}
