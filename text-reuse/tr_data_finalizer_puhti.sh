@@ -7,7 +7,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=20
 #SBATCH --mem-per-cpu=400MB
-#SBATCH --array=0-19
+#SBATCH --array=0-139
 #SBATCH --output=logs/tr_data_final_%A_%a.out
 #SBATCH --error=logs/err/tr_data_final_%A_%a.err
 #SBATCH --mail-type=ALL
