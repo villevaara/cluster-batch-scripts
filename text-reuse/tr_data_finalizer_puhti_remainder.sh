@@ -6,7 +6,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=40
-#SBATCH --mem=16G
+#SBATCH --mem=32G
 #SBATCH --output=logs/tr_data_final_%j.out
 #SBATCH --error=logs/err/tr_data_final_%j.err
 #SBATCH --mail-type=ALL
