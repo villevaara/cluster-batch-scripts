@@ -5,10 +5,10 @@
 
 usage()
 {
-    echo "usage: tr_single_lr_kale [-c cores (default 40)] [-i iter] [-t time (default 14 days)]"
+    echo "usage: tr_single_lr_kale [-c cores (default 80)] [-i iter] [-t time (default 14 days)]"
 }
 
-cores=40
+cores=80
 iter=-1
 time=336
 error=0
