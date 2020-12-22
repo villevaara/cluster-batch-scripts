@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=textReuse_ECCO_EEBO_dataFinal
 #SBATCH --account=Project_2000230
-#SBATCH --partition=small
-#SBATCH --time=72:00:00
+#SBATCH --partition=longrun
+#SBATCH --time=168:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=40
-#SBATCH --mem=32G
+#SBATCH --mem=38G
 #SBATCH --output=logs/tr_data_final_%j.out
 #SBATCH --error=logs/err/tr_data_final_%j.err
 #SBATCH --mail-type=ALL
