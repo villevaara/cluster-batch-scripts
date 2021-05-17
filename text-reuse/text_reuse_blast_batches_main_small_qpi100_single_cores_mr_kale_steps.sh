@@ -1,6 +1,6 @@
 #!/bin/bash -l
-#SBATCH --job-name=TR_long
-#SBATCH --partition=long
+#SBATCH --job-name=TR_med
+#SBATCH --partition=medium
 #SBATCH --time=168:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
