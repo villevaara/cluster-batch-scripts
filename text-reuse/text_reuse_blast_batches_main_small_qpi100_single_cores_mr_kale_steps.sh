@@ -34,12 +34,12 @@ echo "----------------------------------------------------------------------"
 echo "SINGLE JOB - cores: $1 - iter: $2 - timelim: $3 - mem: $SLURM_MEM_PER_NODE"
 echo "----------------------------------------------------------------------" 
 
-mkdir "$WRKDIR/txt_reuse/temp/batchdata_$2"
-rsync -av $WRKDIR/txt_reuse/blast_work_from_puhti/blast_work $WRKDIR/txt_reuse/temp/batchdata_$2 --exclude batches --exclude info
-mkdir "$WRKDIR/txt_reuse/temp/batchdata_$2/batches"
-mkdir "$WRKDIR/txt_reuse/temp/batchdata_$2/info"
+# mkdir "$WRKDIR/txt_reuse/temp/batchdata_$2"
+# rsync -av $WRKDIR/txt_reuse/blast_work_from_puhti/blast_work $WRKDIR/txt_reuse/temp/batchdata_$2 --exclude batches --exclude info
+# mkdir "$WRKDIR/txt_reuse/temp/batchdata_$2/batches"
+# mkdir "$WRKDIR/txt_reuse/temp/batchdata_$2/info"
 
-srun python blast_batches.py --output_folder="$WRKDIR/txt_reuse/temp/batchdata_$2" --batch_folder="$WRKDIR/txt_reuse/results_qpi100steps" --threads=$1 --text_count=1302141 --qpi=100 --iter=$2 --e_value=0.000000001 --preset="taito-timelimit" --preset_info="$time_in_minutes;30"
+srun python blast_batches.py --output_folder="$WRKDIR/txt_reuse/blast_work_from_puhti/blast_work" --batch_folder="$WRKDIR/txt_reuse/results_qpi100steps" --threads=$1 --text_count=1302141 --qpi=100 --iter=$2 --e_value=0.000000001 --preset="taito-timelimit" --preset_info="$time_in_minutes;30"
 echo "SHELLSCRIPT - Finished iter $thisiter."
 echo "SHELLSCRIPT - $(date) - Job finished."
 blastp -version
