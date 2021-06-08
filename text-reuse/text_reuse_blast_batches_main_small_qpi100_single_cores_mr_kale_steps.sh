@@ -39,9 +39,9 @@ echo "----------------------------------------------------------------------"
 # mkdir "$WRKDIR/txt_reuse/temp/batchdata_$2/batches"
 # mkdir "$WRKDIR/txt_reuse/temp/batchdata_$2/info"
 
-srun python blast_batches.py --output_folder="$WRKDIR/txt_reuse/blast_work_from_puhti/blast_work" --batch_folder="$WRKDIR/txt_reuse/results_qpi100steps" --threads=$1 --text_count=1302141 --qpi=100 --iter=$2 --e_value=0.000000001 --preset="taito-timelimit" --preset_info="$time_in_minutes;30"
+srun python blast_batches.py --output_folder="$WRKDIR/txt_reuse/blast_work_clean/blast_work" --batch_folder="$WRKDIR/txt_reuse/results_qpi100steps" --threads=$1 --text_count=1302141 --qpi=100 --iter=$2 --e_value=0.000000001 --preset="kale-timelimit" --preset_info="$time_in_minutes;30"
 echo "SHELLSCRIPT - Finished iter $thisiter."
 echo "SHELLSCRIPT - $(date) - Job finished."
 blastp -version
 
-rm -r "$WRKDIR/txt_reuse/temp/batchdata_$2"
+# rm -r "$WRKDIR/txt_reuse/temp/batchdata_$2"
