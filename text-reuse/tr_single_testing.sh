@@ -19,11 +19,14 @@ while [ "$1" != "" ]; do
         -c | --cores )          shift
                                 cores=$1
                                 ;;
-        -i | --iter )          shift
+        -i | --iter )           shift
                                 iter=$1
                                 ;;
         -t | --time )           shift
                                 time=$1
+                                ;;
+        -m | --max )            shift
+                                max=$1
                                 ;;
         * )                     usage
                                 exit 1
