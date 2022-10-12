@@ -2,7 +2,7 @@
 #SBATCH --job-name=textReuse_ECCO_EEBO_dataPrep
 #SBATCH --account=Project_2000230
 #SBATCH --partition=small
-#SBATCH --time=8:00:00
+#SBATCH --time=24:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
@@ -18,8 +18,8 @@ module load python-data/3.10-22.09
 pip install -r requirements.txt --user
 cd /scratch/project_2000230/txt_reuse/blast_ecco/code/work
 
-export LMDB_PATH="$HOME/localinstall/usr/local"
-export PATH="$PATH:$HOME/localinstall/usr/local/bin"
+# export LMDB_PATH="$HOME/localinstall/usr/local"
+# export PATH="$PATH:$HOME/localinstall/usr/local/bin"
 export PATH="$HOME/customblast/blast-custom-text-reuse/ncbi-blast-2.13.0+-src_modified/c++/ReleaseMT/bin:$PATH"
 
 
