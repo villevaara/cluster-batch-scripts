@@ -5,7 +5,7 @@
 #SBATCH --time=24:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
+#SBATCH --cpus-per-task=6
 #SBATCH --mem-per-cpu=64G
 #SBATCH --output=logs/tr_data_prep_%j.out
 #SBATCH --error=logs/err/tr_data_prep_%j.err
@@ -24,6 +24,6 @@ export PATH="$HOME/customblast/blast-custom-text-reuse/ncbi-blast-2.13.0+-src_mo
 
 
 echo "SHELLSCRIPT - $(date) - Starting data preparer."
-srun python data_preparer.py --data_location="/scratch/project_2000230/txt_reuse/chunks_for_blast/" --output_folder="/scratch/project_2000230/txt_reuse/blast_work/" --language="ENG" --threads=1
+srun python data_preparer.py --data_location="/scratch/project_2000230/txt_reuse/chunks_for_blast/" --output_folder="/scratch/project_2000230/txt_reuse/blast_work/" --language="ENG" --threads=6
 echo "SHELLSCRIPT - $(date) - Job finished. BLAST version:"
 blastp -version
