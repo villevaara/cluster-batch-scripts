@@ -7,8 +7,8 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=24G
-#SBATCH --output=logs/elastic_indexer_%j.out
-#SBATCH --error=logs/err/elastic_indexer_%j.err
+#SBATCH --output=logs/elastic_nlf_indexer_%j.out
+#SBATCH --error=logs/err/elastic_nlf_indexer_%j.err
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=villepvaara@gmail.com
 
